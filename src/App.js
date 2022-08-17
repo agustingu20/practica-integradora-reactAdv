@@ -1,12 +1,14 @@
 import './App.css';
-import { Home } from './components/Home';
+import { Search } from './components/Search';
+import { SearchBar } from './components/SearchBar/SearchBar';
 import { WeatherProvider } from './providers/WeatherContext';
 
 function App() {
   return (
     <div className="App">
       <WeatherProvider>
-      <Home />
+      <Search />
+      <SearchBar />
       </WeatherProvider>
     </div>
   );

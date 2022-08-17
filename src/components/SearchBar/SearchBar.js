@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import useFetch from '../../hooks/CustomFetch/UseFetch';
+import WeatherContext from '../../providers/WeatherContext';
 
 export const SearchBar = () => {
   const ciudades = ['London', 'Barcelona', 'Long Beach', 'Argentina'];
   const [inputValue, setInputValue] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+
+  const weatherData = useFetch(`http://api.weatherapi.com/v1/current.json?key=6be8c28794924ed8a2a184922222905&q=${inputValue}`);
+
+  const { setWeather } = useContext(WeatherContext);
+
   const handleSearchBar = () => {
-    console.log('click');
+    setWeather(weatherData.data);
   };
+
   const handleChange = (e) => {
     setInputValue(e.target.value);
     let matches = [];
@@ -26,7 +34,7 @@ export const SearchBar = () => {
     <div>
       <div>
         <input type='text' placeholder='search location' onChange={handleChange}/>
-        {/* <button type='button' onClick={() => handleSearchBar()}>Search</button> */}
+        <button type='button' onClick={() => handleSearchBar()}>Search</button>
       </div>
       {
       suggestions && suggestions.map((suggestion, i) => (
