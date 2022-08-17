@@ -1,5 +1,5 @@
 import './App.css';
-import { Search } from './components/Search';
+import { Home } from './components/Home';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { WeatherProvider } from './providers/WeatherContext';
 
@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <WeatherProvider>
-      <Search />
-      <SearchBar />
+        <Home />
+        <SearchBar />
       </WeatherProvider>
     </div>
   );
