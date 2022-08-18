@@ -1,18 +1,15 @@
 /* eslint-disable object-curly-newline */
 import './App.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Home } from './components/Home';
 import { SearchBar } from './components/SearchBar/SearchBar';
-import WeatherContext, { WeatherProvider } from './providers/WeatherContext';
+import WeatherContext from './providers/WeatherContext';
 
 function App() {
-  // const { isShowHome } = useContext(WeatherContext);
-  const [isShowHome, setIsShowHome] = useState(true);
+  const { isShowHome } = useContext(WeatherContext);
 
   return (
-    <div className="App">
-      <WeatherProvider>{isShowHome ? <Home /> : <SearchBar />}</WeatherProvider>
-    </div>
+    <div className="App">{isShowHome === true ? <Home /> : <SearchBar />}</div>
   );
 }
 

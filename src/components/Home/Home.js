@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import WeatherContext from '../../providers/WeatherContext';
 import clear from '../../assets/Clear.png';
 import lightCloud from '../../assets/LightCloud.png';
@@ -14,15 +13,13 @@ const Home = () => {
   return (
     <section className="home-section text-white">
       <div className="d-flex p-3">
-        <Link to="/search">
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={() => setIsShowHome(false)}
-          >
-            Search for places
-          </button>
-        </Link>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => setIsShowHome(false)}
+        >
+          Search for places
+        </button>
       </div>
       <div className="d-flex flex-column align-items-center">
         <div>
