@@ -20,9 +20,11 @@ export const SearchBar = () => {
   const weatherData = useFetch(
     `http://api.weatherapi.com/v1/current.json?key=6be8c28794924ed8a2a184922222905&q=${cityName}`,
   );
+  console.log('SearchBar ~ weatherData', weatherData);
 
   useEffect(() => {
     setWeather(weatherData.data);
+    localStorage.setItem('cityWeatherData', JSON.stringify(weatherData.data));
   }, [weatherData]);
 
   const handleSearchBar = () => {
@@ -30,8 +32,8 @@ export const SearchBar = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="search-section">
+      <div className="pt-3">
         <input
           type="text"
           placeholder="search location"
@@ -42,15 +44,15 @@ export const SearchBar = () => {
         </button>
       </div>
       {suggestions &&
-        suggestions.map((suggestion, i) => (
-          <ul key={i} className="mt-3">
-            <li className="suggestions">
-              <button
-                type="button"
-                onClick={() => setCityName(suggestion?.name)}
-              >
-                {suggestion?.name}
-              </button>
+        suggestions.map((suggestion) => (
+          <ul key={suggestion.id} className="mt-3">
+            <li
+              className="suggestions"
+              onClick={() => {
+                setCityName(suggestion?.name);
+              }}
+            >
+              <a href="/">{suggestion?.name}</a>
             </li>
           </ul>
         ))}
