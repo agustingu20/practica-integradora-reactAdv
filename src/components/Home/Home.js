@@ -9,7 +9,7 @@ import shower from '../../assets/Shower.png';
 import cloudy from '../../assets/HeavyCloud.png';
 
 const Home = () => {
-  const { weather } = useContext(WeatherContext);
+  const { weather, setIsShowHome } = useContext(WeatherContext);
 
   return (
     <section className="home-section text-white">
@@ -18,7 +18,7 @@ const Home = () => {
           <button
             type="button"
             className="btn btn-secondary"
-            onClick={() => localStorage.clear('cityWeatherData')}
+            onClick={() => setIsShowHome(false)}
           >
             Search for places
           </button>

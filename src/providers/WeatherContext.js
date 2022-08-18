@@ -1,17 +1,19 @@
 import { createContext, useState } from 'react';
 
-const localWeather = JSON.parse(localStorage.getItem('cityWeatherData')) || {};
-const weatherContext = createContext(localWeather);
+const weatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
   const [location, setLocation] = useState('Paris');
-  const [weather, setWeather] = useState(localWeather);
+  const [weather, setWeather] = useState({});
+  const [isShowHome, setIsShowHome] = useState(true);
 
   const data = {
     weather,
     setWeather,
     location,
     setLocation,
+    isShowHome,
+    setIsShowHome,
   };
 
   return (

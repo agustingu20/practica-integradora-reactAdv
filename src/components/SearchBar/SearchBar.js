@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable operator-linebreak */
 import React, { useContext, useEffect, useState } from 'react';
 import useFetch from '../../Hooks/CustomFetch/UseFetch';
@@ -7,7 +8,8 @@ export const SearchBar = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [cityName, setCityName] = useState('');
 
-  const { setWeather, location, setLocation } = useContext(WeatherContext);
+  const { setWeather, location, setLocation, setIsShowHome } =
+    useContext(WeatherContext);
 
   const cityData = useFetch(
     `http://api.weatherapi.com/v1/search.json?key=6be8c28794924ed8a2a184922222905&q=${location}`,
@@ -24,11 +26,11 @@ export const SearchBar = () => {
 
   useEffect(() => {
     setWeather(weatherData.data);
-    localStorage.setItem('cityWeatherData', JSON.stringify(weatherData.data));
   }, [weatherData]);
 
   const handleSearchBar = () => {
     setSuggestions(cityData.data);
+    setIsShowHome(true);
   };
 
   return (
