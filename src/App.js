@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import './App.css';
 import { useContext } from 'react';
 import { Home } from './components/Home';

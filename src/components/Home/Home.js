@@ -15,7 +15,7 @@ const Home = () => {
       <div className="d-flex p-3">
         <button
           type="button"
-          className="btn btn-secondary"
+          className="button-searchFor btn btn-secondary"
           onClick={() => setIsShowHome(false)}
         >
           Search for places
