@@ -41,6 +41,9 @@ const Home = () => {
           {weather?.current?.condition?.text === 'Partly cloudy' && (
             <img src={cloudy} alt="cloudy" />
           )}
+          {weather?.current?.condition?.text === 'Overcast' && (
+            <img src={cloudy} alt="cloudy" />
+          )}
         </div>
         <h1 className="pt-3">{weather?.current?.temp_c} °C</h1>
         <h1 className="pt-3">{weather?.current?.condition?.text}</h1>
