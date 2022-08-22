@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import useFetch from '../../hooks/CustomFetch/useFetch';
+import useFetch from '../../Hooks/CustomFetch/UseFetch';
 import WeatherContext from '../../providers/WeatherContext';
 
 export const SearchBar = () => {
@@ -35,17 +35,20 @@ export const SearchBar = () => {
     <div className="search-section">
       <div className="pt-3">
         <input
-        className="input-search"
+          className="input-search"
           type="text"
           placeholder="search location"
           onChange={handleChange}
         />
-        <button className="search-button" type="button" onClick={() => handleSearchBar()}>
+        <button
+          className="search-button"
+          type="button"
+          onClick={() => handleSearchBar()}
+        >
           Search
         </button>
       </div>
-      {suggestions
-        && suggestions.map((suggestion) => (
+      {suggestions && suggestions.map((suggestion) => (
           <ul key={suggestion.id} className="mt-3">
             <li className="suggestions">
               <button
@@ -58,7 +61,7 @@ export const SearchBar = () => {
               </button>
             </li>
           </ul>
-        ))}
+      ))}
     </div>
   );
 };

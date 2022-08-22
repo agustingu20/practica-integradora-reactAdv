@@ -26,6 +26,9 @@ const Home = () => {
           {weather?.current?.condition?.text === 'Clear' && (
             <img src={clear} alt="clear" />
           )}
+          {weather?.current?.condition?.text === 'Sunny' && (
+            <img src={clear} alt="clear" />
+          )}
           {weather?.current?.condition?.text === 'Partly cloudy' && (
             <img src={lightCloud} alt="lightCloud" />
           )}
