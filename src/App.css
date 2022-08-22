@@ -1,24 +1,70 @@
 .App {
-  text-align: center;
+    text-align: center;
+    padding: 6px;
+    background-color: #1e213a;
 }
 
 .home-section {
-  display: flex;
-  justify-content: start;
-  flex-direction: column;
-  height: 50rem;
-  background-color: #1e213a;
-  background-image: url('./assets/Cloud-background.png');
-  background-size: auto;
-  background-position: top;
-  background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1e213a;
+    background-image: url('./assets/Cloud-background.png');
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
 }
 
 .search-section {
-  background-color: #1e213a;
-  height: 50rem;
+    background-color: #1e213a;
+    height: 100vh;
 }
 
 .suggestions {
-  list-style: none;
+    list-style: none;
+}
+
+.input-search {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 8px 25px;
+    margin-right: 10px;
+    border-radius: 0;
+    color: #616475;
+}
+
+.search-button {
+    background-color: #3c47e8;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 400;
+}
+
+.button-cities {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px 140px;
+    margin-right: 25px;
+}
+
+.button-cities:hover {
+    background-color: transparent;
+    border: 1px solid #616475;
+    color: #fff;
+}
+
+.button-cities:focus {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.button-searchFor {
+    background-color: #6e707a;
+    border-radius: 0;
+    box-shadow: -2px 5px 5px 0px #1a1b1b;
+    font-weight: 400;
 }
