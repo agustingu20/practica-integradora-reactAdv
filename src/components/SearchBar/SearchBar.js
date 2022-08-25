@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import useFetch from '../../Hooks/CustomFetch/UseFetch';
+import useFetch from '../../hooks/CustomFetch/UseFetch';
 import WeatherContext from '../../providers/WeatherContext';
 
 export const SearchBar = () => {
