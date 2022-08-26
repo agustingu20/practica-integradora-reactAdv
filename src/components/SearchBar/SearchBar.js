@@ -56,6 +56,7 @@ export const SearchBar = () => {
                 onClick={() => {
                   setCityName(suggestion?.name);
                 }}
+                role = 'button'
               >
                 {suggestion?.name}
               </button>
